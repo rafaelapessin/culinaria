@@ -1,0 +1,44 @@
+<h2 class="mb-4">{{#if isEditing}}Alterar Receita{{else}}Nova Receita{{/if}}</h2>
+
+{{#if errorMessage}}
+  <div class="alert alert-danger">{{errorMessage}}</div>
+{{/if}}
+
+<form action="/{{#if isEditing}}alterar/{{recipe.id}}{{else}}nova{{/if}}" method="POST">
+  
+  {{#if isEditing}}
+  <div class="mb-3">
+    <label for="id" class="form-label">Identificação da Receita</label>
+    <input type="text" class="form-control" id="id" name="id" value="{{recipe.id}}" disabled>
+  </div>
+  {{/if}}
+  
+  <div class="mb-3">
+    <label for="titulo" class="form-label">Título da Receita</label>
+    <input type="text" class="form-control" id="titulo" name="titulo" value="{{recipe.titulo}}" required>
+  </div>
+  
+  <div class="mb-3">
+    <label for="ingredientes" class="form-label">Ingredientes</label>
+    <textarea class="form-control" id="ingredientes" name="ingredientes" rows="5" placeholder="Digite cada ingrediente em uma nova linha" required>{{recipe.ingredientes}}</textarea>
+  </div>
+  
+  <div class="mb-3">
+    <label for="modoDePreparo" class="form-label">Modo de Preparo</label>
+    <textarea class="form-control" id="modoDePreparo" name="modoDePreparo" rows="5" placeholder="Descreva passo a passo o modo de preparo" required>{{recipe.modoDePreparo}}</textarea>
+  </div>
+  
+  <div class="mb-3">
+    <label for="tempoDePreparo" class="form-label">Tempo de Preparo (minutos)</label>
+    <input type="number" class="form-control" id="tempoDePreparo" name="tempoDePreparo" value="{{recipe.tempoDePreparo}}" min="1" required>
+  </div>
+  
+  <div class="d-flex justify-content-start mt-4">
+    <button type="submit" class="btn btn-primary me-2">
+      <i class="bi bi-save"></i> {{#if isEditing}}Alterar Receita{{else}}Salvar Receita{{/if}}
+    </button>
+    <a href="/" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+  </div>
+</form>

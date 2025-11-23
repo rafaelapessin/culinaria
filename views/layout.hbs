@@ -1,10 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>{{titulo_pagina}}</title>
+  
+  <link rel='stylesheet' href='/stylesheets/bootstrap/bootstrap.min.css' />
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  
+  <div class="container mt-4 mb-4"> <h1>Sistema de Receitas</h1>
+
+    <ul class="nav nav-pills nav-fill justify-content-center mb-3">
+        {{#each links}}
+        <li class="nav-item">
+            <a class="nav-link {{#if active}}active{{/if}}" href="{{this.href}}">
+              {{this.text}}
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    
     {{{body}}}
-  </body>
+    
+  </div>
+
+  <script src="/javascripts/bootstrap/bootstrap.bundle.min.js"></script>
+</body>
 </html>

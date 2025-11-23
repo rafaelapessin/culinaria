@@ -1,0 +1,24 @@
+<h2 class="mb-4">Consulta Receita</h2>
+
+<div class="card mb-4">
+  <div class="card-header">
+    <h3 class="card-title">{{receita.titulo}}</h3>
+  </div>
+  <div class="card-body">
+    
+    <p class="fw-bold">Tempo de Preparo</p>
+    <p class="mb-3">{{receita.tempoDePreparo}} minutos</p>
+    
+    <p class="fw-bold">Ingredientes</p>
+    <pre class="bg-light p-3 border">{{receita.ingredientes_pre}}</pre>
+    
+    <p class="fw-bold">Modo de Preparo</p>
+    <pre class="bg-light p-3 border">{{receita.modoDePreparo_pre}}</pre>
+
+  </div>
+  <div class="card-footer">
+    <a href="/" class="btn btn-secondary">
+      <i class="bi bi-arrow-left"></i> Voltar
+    </a>
+  </div>
+</div>

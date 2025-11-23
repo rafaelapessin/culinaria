@@ -1,0 +1,27 @@
+<h2 class="mb-4">Pesquisa de Receitas</h2>
+
+<form action="/pesquisar" method="GET" class="mb-4">
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Pesquisa por título da receita" name="q" value="{{searchTerm}}">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+  </div>
+</form>
+
+{{#if semResultados}}
+  <div class="alert alert-info" role="alert">
+    {{mensagem}}
+  </div>
+{{else}}
+  <h4>Lista de Receitas</h4>
+  <div class="list-group mb-3">
+    {{#each resultados}}
+      <a href="/consultar/{{this.id}}" class="list-group-item list-group-item-action">
+        {{this.titulo}}
+      </a>
+    {{/each}}
+  </div>
+{{/if}}
+
+<a href="/" class="btn btn-secondary mt-3">
+  <i class="bi bi-arrow-left"></i> Voltar
+</a>
