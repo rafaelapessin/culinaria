@@ -3,7 +3,7 @@
 ### Rafaela Amorim Pessin
 ### Disciplina: Desenvolvimento Back-End I
 
-### Aplicação web Fullstack com Node.js Express e Bootstrap para gerenciar receitas culinárias.
+### Aplicação web Fullstack com Node.js Express e Bootstrap para gerenciar receitas culinárias
 
 ## Tecnologias: 
 - Node.js
