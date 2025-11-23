@@ -34,8 +34,8 @@ exports.sobre = (req, res, next) => {
         titulo_pagina: "Sobre o Sistema de Receitas",
         ...navData('/sobre'),
         info: {
-            autor: "Rossini Pena Abrantes",
-            data: "Novembro de 2025",
+            autor: "Rafaela Amorim Pessin",
+            data: "23 de Novembro de 2025",
             disciplina: "Desenvolvimento Backend I"
         }
     });
